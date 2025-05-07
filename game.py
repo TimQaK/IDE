@@ -3,7 +3,7 @@ import numpy as np
 def random_predict(number: int = 1) -> int:
     """Рандомно угадываем число"""
     count = 0
-    predict_number = 50  # переносим вне цикла, чтобы сохранялся прогресс
+    predict_number = 50  # беру 50 как середину отрезка из 100, от туда будут идти угадывания
 
     while True:
         count += 1
