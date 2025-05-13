@@ -1,18 +1,20 @@
 import numpy as np
 
 def random_predict(number: int = 1) -> int:
-    """Рандомно угадываем число"""
+    
     count = 0
-    predict_number = 50  # беру 50 как середину отрезка из 100, от туда будут идти угадывания
+    low = 1
+    high = 100
 
     while True:
         count += 1
-        if number == predict_number:
-            break  # выход из цикла если угадали
+        predict_number = (low + high) // 2
+        if predict_number == number:
+            break
         elif predict_number < number:
-            predict_number += 10
-        elif predict_number > number:
-            predict_number -= 1
+            low = predict_number + 1
+        else:
+            high = predict_number - 1
     return count
 
 def score_game(random_predict) -> int:
